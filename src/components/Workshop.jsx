@@ -1,88 +1,74 @@
-import React, { useState } from 'react';
-import OptionWheel from '../assets/optionwheel';
+import React from 'react';
 import workshopBgAvif from '../images/cars themed9 (1).avif';
 import workshopBg from '../images/cars themed9 (1).jpeg';
 
 const WORKSHOP_OPTIONS = [
   {
-    title: 'Full-Stack Development',
-    description: 'Building end-to-end web applications with responsive UIs and resilient server architectures.'
+    title: 'Web Development',
+    description: 'Architecting scalable frontends and robust APIs to deliver seamless full-stack applications.',
+    icon: 'terminal'
   },
   {
-    title: 'React & Frontend Architecture',
-    description: 'Crafting modular, reusable component systems with high-performance state management.'
+    title: 'Generative AI',
+    description: 'Integrating LLMs and modern AI tools to automate workflows and build intelligent systems.',
+    icon: 'memory'
   },
   {
-    title: 'Backend Systems & APIs',
-    description: 'Engineering RESTful APIs, microservices, and secure database solutions.'
+    title: 'Cloud Engineering',
+    description: 'Deploying high-availability infrastructure with containers and streamlined CI/CD pipelines.',
+    icon: 'cloud'
   },
   {
-    title: 'UI/UX Design & Motion',
-    description: 'Designing elegant user experiences with fluid micro-interactions and modern aesthetics.'
-  },
-  {
-    title: 'Cloud & DevOps Engineering',
-    description: 'Deploying scalable applications with CI/CD pipelines, Docker containers, and cloud infrastructure.'
-  },
-  {
-    title: 'Performance & Speed',
-    description: 'Optimizing render pipelines, asset delivery, and bundle size for lightning-fast page speed.'
+    title: 'System Design',
+    description: 'Designing distributed, fault-tolerant architectures optimized for performance and scale.',
+    icon: 'account_tree'
   }
 ];
 
 const Workshop = () => {
-  const [selectedIdx, setSelectedIdx] = useState(0);
-  const currentOption = WORKSHOP_OPTIONS[selectedIdx] || WORKSHOP_OPTIONS[0];
-
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden px-6 md:px-12" id="workshop">
-      {/* Full-screen Background Image - Pure Original Colors */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <picture className="w-full h-full block">
-          <source srcSet={workshopBgAvif} type="image/avif" />
-          <img 
-            src={workshopBg} 
-            alt="Workshop Background" 
-            className="w-full h-full object-cover object-center saturate-110 contrast-105" 
-          />
-        </picture>
+    <section className="relative min-h-screen w-full flex flex-col md:flex-row bg-[#FFFFF0] overflow-hidden" id="workshop">
+      {/* Left: Cars Themed Image Container */}
+      <div className="w-full md:w-1/2 min-h-[50vh] md:min-h-screen flex items-center justify-center p-8 md:py-16 md:pl-16 md:pr-8 z-10">
+        <div className="relative w-full h-full min-h-[40vh] md:min-h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl">
+          <picture className="w-full h-full block">
+            <source srcSet={workshopBgAvif} type="image/avif" />
+            <img 
+              src={workshopBg} 
+              alt="Workshop Background" 
+              className="w-full h-full object-cover object-center saturate-110 contrast-105" 
+            />
+          </picture>
+          {/* Optional inner shadow overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent pointer-events-none"></div>
+        </div>
       </div>
 
-      {/* Workshop Content Grid */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left: Selected Option Details Card */}
-        <div className="flex flex-col items-start text-left bg-black/65 backdrop-blur-lg p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] transition-all duration-300">
-          <span className="text-[#00E5FF] text-xs font-sans uppercase tracking-[0.25em] mb-3 font-bold drop-shadow-[0_0_12px_rgba(0,229,255,0.9)]">
+      {/* Right: Techstack Info Cards */}
+      <div className="w-full md:w-1/2 min-h-screen flex flex-col justify-center py-12 px-8 sm:px-12 lg:px-20 z-0">
+        <div className="max-w-2xl mx-auto w-full">
+          {/* <span className="text-[#00C9FF] text-xs font-sans uppercase tracking-[0.25em] mb-4 font-bold block">
+            02 / Craftsmanship
+          </span> */}
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-slate-900 tracking-tight font-bold mb-10 leading-tight">
             Techstack
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight font-normal mb-4 leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-            {currentOption.title}
           </h2>
-          <p className="text-white/95 font-sans text-sm sm:text-base font-normal tracking-wide leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-            {currentOption.description}
-          </p>
-        </div>
 
-        {/* Right: Interactive OptionWheel */}
-        <div className="h-[320px] sm:h-[420px] w-full flex items-center justify-center">
-          <OptionWheel
-            items={WORKSHOP_OPTIONS.map(opt => opt.title)}
-            defaultSelected={0}
-            onChange={(index) => setSelectedIdx(index)}
-            textColor="#a6a6a6"
-            activeColor="#F5D973"
-            side="right"
-            fontSize={1.8}
-            spacing={1.5}
-            curve={1.2}
-            tilt={8}
-            blur={1.5}
-            fade={0.3}
-            inset={20}
-            loop={true}
-            draggable={true}
-            className="w-full h-full"
-          />
+          {/* Small Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-8">
+            {WORKSHOP_OPTIONS.map((opt, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1"
+              >
+                <div className="w-10 h-10 mb-4 bg-blue-50 rounded-full flex items-center justify-center text-[#00C9FF]">
+                  <span className="material-symbols-outlined text-xl">{opt.icon}</span>
+                </div>
+                <h3 className="text-lg lg:text-xl font-serif text-slate-800 font-bold mb-2">{opt.title}</h3>
+                <p className="text-slate-600 font-sans text-xs lg:text-sm leading-relaxed">{opt.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

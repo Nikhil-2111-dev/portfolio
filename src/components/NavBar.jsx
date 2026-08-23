@@ -3,8 +3,8 @@ import React from 'react';
 const NavBar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Blueprint', href: '#blueprint' },
-    { name: 'Workshop', href: '#workshop' },
+    { name: 'About Me', href: '#blueprint' },
+    { name: 'Tech', href: '#workshop' },
     { name: 'Projects', href: '#powertrain' },
     { name: 'Contact', href: '#pitstop' },
   ];

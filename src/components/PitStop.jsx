@@ -19,18 +19,16 @@ const PitStop = () => {
 
       {/* Floating Centered Typography with High-Contrast Text Drop Shadows */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
-        <span className="text-white text-xs md:text-sm font-sans uppercase tracking-[0.3em] mb-4 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          04 / Connect
-        </span>
+        
         <h2 className="text-5xl sm:text-7xl md:text-8xl font-serif text-white tracking-tight font-normal mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
-          The Pit Stop
+          Let's Connect
         </h2>
         <p className="text-white font-sans text-sm md:text-lg font-normal tracking-wide max-w-2xl leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Ready to accelerate your next digital project? Let's connect and build extraordinary web applications together.
+         Got something intersting to work on? Let's connect and build extraordinary, if not learn from our failures.
         </p>
 
         <a 
-          href="mailto:contact@nikhil.dev" 
+          href="mailto:nallanikhil21@gmail.com" 
           className="inline-block border border-white/80 hover:border-white text-white uppercase text-xs tracking-[0.25em] px-8 py-3.5 rounded-full backdrop-blur-md bg-black/30 hover:bg-white hover:text-black transition-all duration-300 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
         >
           Get In Touch
