@@ -19,14 +19,14 @@ const Hero = () => {
       
       {/* Floating Centered Typography in Electric Cyan Racing Blue with Glowing White Contrast */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
-        <span className="text-[#00E5FF] text-xs md:text-sm font-sans uppercase tracking-[0.3em] mb-4 font-bold drop-shadow-[0_0_12px_rgba(255,255,255,1)]">
-          Nikhil Portfolio
+        <span className="text-[#00E5FF] text-base md:text-base font-sans uppercase tracking-[0.3em] mb-4 font-bold drop-shadow-[0_0_12px_rgba(255,255,255,1)]">
+          N V H Nikhil's Portfolio
         </span>
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif text-[#00C9FF] tracking-tight font-bold mb-6 leading-tight drop-shadow-[0_0_25px_rgba(255,255,255,1)] [text-shadow:_0_0_35px_rgba(255,255,255,0.9)]">
           The Art of Motion
         </h1>
-        <p className="text-[#00D2FF] font-sans text-sm md:text-lg font-semibold tracking-wide max-w-2xl leading-relaxed drop-shadow-[0_0_15px_rgba(255,255,255,1)]">
-          High-performance engineering, bespoke software solutions, and dynamic visual design.
+        <p className="text-[#00D2FF] font-sans text-sm md:text-lg font-semibold tracking-wide max-w-8xl leading-relaxed drop-shadow-[0_0_15px_rgba(255,255,255,1)]">
+          Pre-Final Year at IIIT Lucknow
         </p>
 
         {/* Scroll Indicator */}

@@ -4,7 +4,7 @@ import blueprintBg from '../images/cars themed5 (1).jpg';
 
 const Blueprint = () => {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden" id="blueprint">
+    <section className="relative h-screen w-full flex items-center justify-end px-6 md:px-16 lg:px-24 overflow-hidden" id="blueprint">
       {/* Full-screen Background Image - Pure Original Colors */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <picture className="w-full h-full block">
@@ -17,16 +17,14 @@ const Blueprint = () => {
         </picture>
       </div>
 
-      {/* Floating Centered Typography with High-Contrast Text Drop Shadows */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
-        <span className="text-white text-xs md:text-sm font-sans uppercase tracking-[0.3em] mb-4 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          01 / Architecture
-        </span>
-        <h2 className="text-5xl sm:text-7xl md:text-8xl font-serif text-white tracking-tight font-normal mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
-          The Blueprint
+      {/* Right-Aligned Typography positioned on the Right of the Page */}
+      <div className="relative z-10 -translate-y-10 text-right max-w-xl md:max-w-2xl flex flex-col items-end">
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-serif text-white tracking-tight font-normal mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+          About Me
         </h2>
-        <p className="text-white font-sans text-sm md:text-lg font-normal tracking-wide max-w-2xl leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
-          Conceptualizing scalable system architectures, intuitive wireframes, and refined UI component hierarchies.
+        <p className="text-white font-sans text-sm md:text-lg font-normal tracking-wide leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+          Hi, I’m Nikhil, a Computer Science student and developer who enjoys turning ideas into things that actually work. I’m curious about technology, love solving challenging problems, and enjoy building projects that push me to learn something new(if not existenital crisis). I’m always experimenting, improving, and looking forward to the next interesting thing to build or break.
+
         </p>
       </div>
     </section>
