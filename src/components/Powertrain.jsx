@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import powertrainBgAvif from '../images/cars themed3 (1).avif';
 import powertrainBg from '../images/cars themed3 (1).jpg';
 
@@ -17,20 +18,40 @@ const PROJECTS = [
   }
 ];
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+  }
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+};
+
 const Powertrain = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col-reverse md:flex-row bg-[#FFFFF0] overflow-hidden" id="powertrain">
       {/* Left: Project Cards */}
       <div className="w-full md:w-1/2 min-h-screen flex flex-col justify-center py-12 px-8 sm:px-12 lg:px-20 z-0">
-        <div className="max-w-2xl mx-auto w-full">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-slate-900 tracking-tight font-bold mb-10 leading-tight">
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-2xl mx-auto w-full"
+        >
+          <motion.h2 variants={cardVariant} className="text-4xl sm:text-5xl md:text-6xl font-serif text-slate-900 tracking-tight font-bold mb-10 leading-tight">
             Projects
-          </h2>
+          </motion.h2>
 
           <div className="flex flex-col gap-6">
             {PROJECTS.map((proj, idx) => (
-              <div 
+              <motion.div 
                 key={idx} 
+                variants={cardVariant}
                 className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1"
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -43,14 +64,20 @@ const Powertrain = () => {
                   </div>
                 </div>
                 <p className="text-slate-600 font-sans text-sm lg:text-base leading-relaxed">{proj.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Right: Cars Themed Image Container */}
-      <div className="w-full md:w-1/2 min-h-[50vh] md:min-h-screen flex items-center justify-center p-8 md:py-16 md:pr-16 md:pl-8 z-10">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="w-full md:w-1/2 min-h-[50vh] md:min-h-screen flex items-center justify-center p-8 md:py-16 md:pr-16 md:pl-8 z-10"
+      >
         <div className="relative w-full h-full min-h-[40vh] md:min-h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl">
           <picture className="w-full h-full block">
             <source srcSet={powertrainBgAvif} type="image/avif" />
@@ -62,7 +89,7 @@ const Powertrain = () => {
           </picture>
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-black/20 pointer-events-none"></div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
