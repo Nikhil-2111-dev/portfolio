@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+    /* Clean SaaS Light Mode Palette */
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-dim: #f9fafb;
+    --color-surface-container: #f3f4f6;
+    
+    --color-on-background: #111827;
+    --color-on-surface: #111827;
+    --color-on-surface-variant: #4b5563;
+    --color-matte-silver: #6b7280; /* repurposed for secondary text */
+    
+    --color-primary: #111827;
+    --color-on-primary: #ffffff;
+    
+    --color-outline: #e5e7eb;
+    --color-outline-variant: #d1d5db;
+
+    --radius-DEFAULT: 0rem; /* sharper, more editorial look */
+    --radius-lg: 0.125rem;
+    --radius-xl: 0.25rem;
+    --radius-full: 9999px;
+
+    --spacing-margin-desktop: 80px;
+    --spacing-gutter: 24px;
+    --spacing-section-gap: 120px;
+    --spacing-margin-mobile: 24px;
+    --spacing-unit: 8px;
+
+    /* Magazine Fonts */
+    --font-sans: "Inter", sans-serif;
+    --font-serif: "Playfair Display", serif;
+    
+    --font-display-hero: "Playfair Display", serif;
+    --font-headline-lg: "Playfair Display", serif;
+    --font-headline-md: "Playfair Display", serif;
+    --font-headline-lg-mobile: "Playfair Display", serif;
+    
+    --font-body-lg: "Inter", sans-serif;
+    --font-body-md: "Inter", sans-serif;
+    --font-stats-num: "Inter", sans-serif;
+    --font-label-caps: "Inter", sans-serif;
+}
+
+@layer base {
+  body { 
+    background-color: var(--color-background); 
+    color: var(--color-on-background); 
+    overflow-x: hidden; 
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .fade-in-up { 
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); 
+  }
+  .fade-in-up.visible { 
+      opacity: 1; 
+      transform: translateY(0); 
+  }
+
+  /* Clean Magazine Button */
+  .btn-primary {
+      background-color: var(--color-primary); 
+      color: var(--color-on-primary);
+      border: 1px solid var(--color-primary);
+      transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+      background-color: transparent; 
+      color: var(--color-primary);
+  }
+  
+  /* Minimal Nav Link */
+  .nav-link { 
+      position: relative; 
+      display: inline-block; 
+      transition: color 0.3s ease;
+  }
+  .nav-link::after {
+      content: ''; 
+      position: absolute; 
+      width: 0; 
+      height: 1px; 
+      bottom: -2px; 
+      left: 0;
+      background-color: currentColor; 
+      transition: width 0.3s ease; 
+  }
+  .nav-link:hover::after { width: 100%; }
+  
+  /* Clean SaaS Card */
+  .saas-card { 
+      background: var(--color-surface); 
+      border: 1px solid var(--color-outline);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .saas-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer utilities {
+    .text-display-hero {
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -0.03em;
+        font-weight: 500;
+    }
+    .text-body-lg {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 300;
+    }
+    .text-stats-num {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 400;
+    }
+    .text-body-md {
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+    .text-headline-lg-mobile {
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+    }
+    .text-headline-md {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+    }
+    .text-headline-lg {
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+    }
+    .text-label-caps {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
